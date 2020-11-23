@@ -3,4 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorTextWhite">#FFFFFF</color>
+    <color name="colorBackground">#191926</color>
+    <color name="colorRedText">#FF3466</color>
+    <color name="colorGrayText">#6D6D80</color>
+    <color name="colorStoryline">#ECECEC</color>
+    <color name="colorActorName">#D8D8D8</color>
 </resources>

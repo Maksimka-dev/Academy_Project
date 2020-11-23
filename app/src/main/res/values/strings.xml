@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Academy_Project</string>
+    <string name="age_above_13">13+</string>
+    <string name="film_name">Avengers:\nEnd Game</string>
+    <string name="categories">Action, Adventure, Fantasy</string>
+    <string name="count_reviews">125 REVIEWS</string>
+    <string name="name">Storyline</string>
+    <string name="cast">Cast</string>
+    <string name="robert">Robert\nDowney Jr.</string>
+    <string name="chris">Chris\nEvans</string>
+    <string name="mark">Mark\nRuffalo</string>
+    <string name="chris2">Chris\nHemsworth</string>
 </resources>
