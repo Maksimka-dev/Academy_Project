@@ -9,4 +9,5 @@
     <color name="colorGrayText">#6D6D80</color>
     <color name="colorStoryline">#ECECEC</color>
     <color name="colorActorName">#D8D8D8</color>
+    <color name="colorTime">#565665</color>
 </resources>

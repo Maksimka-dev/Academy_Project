@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="14dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineGap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="22dp" />
+
+
+    <ImageView
+        android:id="@+id/backgroundsmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backgroundelementlist"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStr"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/smallMovieImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/maskmovie"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsmall"
+        app:layout_constraintTop_toTopOf="@+id/backgroundsmall" />
+
+    <ImageView
+        android:id="@+id/likeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="13dp"
+        android:src="@drawable/like"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundsmall"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ageSmallTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rectangleage"
+        android:fontFamily="sans-serif"
+        android:paddingStart="3dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="3dp"
+        android:paddingBottom="6dp"
+        android:text="@string/age_above_13"
+        android:textColor="@color/colorTextWhite"
+        android:textFontWeight="900"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineGap"
+        app:layout_constraintTop_toTopOf="@+id/backgroundsmall" />
+
+    <TextView
+        android:id="@+id/filmCategoriesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="214dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/categories"
+        android:textColor="@color/colorRedText"
+        android:textFontWeight="300"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/smallMovieImageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineGap"
+        app:layout_constraintTop_toTopOf="@+id/smallMovieImageView" />
+
+
+    <ImageView
+        android:id="@+id/star1ImageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/redstariconsmall"
+        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
+        app:layout_constraintStart_toStartOf="@+id/guidelineGap"
+        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
+
+    <ImageView
+        android:id="@+id/star2ImageView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/redstariconsmall"
+        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/star1ImageView"
+        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
+
+    <ImageView
+        android:id="@+id/star3ImageView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/redstariconsmall"
+        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/star2ImageView2"
+        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
+
+    <ImageView
+        android:id="@+id/star4ImageView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/redstariconsmall"
+        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/star3ImageView2"
+        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
+
+    <ImageView
+        android:id="@+id/star5ImageView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/graystariconsmall"
+        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/star4ImageView2"
+        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
+
+    <TextView
+        android:id="@+id/countReviewsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="sans-serif"
+        android:paddingStart="9dp"
+        android:text="@string/count_reviews"
+        android:textColor="@color/colorGrayText"
+        android:textFontWeight="900"
+        android:textSize="8sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/star5ImageView2"
+        app:layout_constraintTop_toBottomOf="@+id/filmCategoriesTextView" />
+
+    <TextView
+        android:id="@+id/filmNameSmallTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="4sp"
+        android:fontFamily="sans-serif"
+        android:text="@string/film_name_small"
+        android:textColor="@color/colorStoryline"
+        android:textFontWeight="900"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineGap"
+        app:layout_constraintTop_toBottomOf="@+id/countReviewsTextView"/>
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3sp"
+        android:fontFamily="sans-serif"
+        android:text="@string/time"
+        android:textColor="@color/colorTime"
+        android:textFontWeight="900"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineGap"
+        app:layout_constraintTop_toBottomOf="@+id/filmNameSmallTextView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
