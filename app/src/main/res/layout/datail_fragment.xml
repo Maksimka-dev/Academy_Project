@@ -31,6 +31,7 @@
             android:layout_height="298dp"
             android:scaleType="centerCrop"
             android:src="@drawable/mask"
+            android:foreground="@drawable/list_gradient"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -213,124 +214,13 @@
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@+id/filmStoryTextView"/>
 
-        <ImageView
-            android:id="@+id/firstCastImageView"
-            android:adjustViewBounds="true"
-            app:layout_constraintHorizontal_weight="1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detailRecyclerView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/robert"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toStartOf="@+id/secondCastImageView"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/castTextView"/>
-
-        <ImageView
-            android:id="@+id/secondCastImageView"
-            android:adjustViewBounds="true"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/chris"
-            android:layout_marginStart="8dp"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toStartOf="@+id/thirdCastImageView"
-            app:layout_constraintStart_toEndOf="@+id/firstCastImageView"
-            app:layout_constraintTop_toBottomOf="@+id/castTextView"/>
-
-        <ImageView
-            android:id="@+id/thirdCastImageView"
-            android:adjustViewBounds="true"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/mark"
-            android:layout_marginStart="8dp"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toStartOf="@+id/fourthCastImageView"
-            app:layout_constraintStart_toEndOf="@+id/secondCastImageView"
-            app:layout_constraintTop_toBottomOf="@+id/castTextView"/>
-
-        <ImageView
-            android:id="@+id/fourthCastImageView"
-            android:adjustViewBounds="true"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/chris2"
-            android:layout_marginStart="8dp"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toEndOf="@+id/thirdCastImageView"
-            app:layout_constraintTop_toBottomOf="@+id/castTextView"/>
-
-        <TextView
-            android:id="@+id/firstCastTextView"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="@string/robert"
-            android:textColor="@color/colorActorName"
-            android:textSize="12sp"
-            android:lineSpacingExtra="2sp"
-            android:textFontWeight="900"
-            android:layout_marginTop="6dp"
-            app:layout_constraintEnd_toStartOf="@+id/secondCastTextView"
             app:layout_constraintStart_toEndOf="@+id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/firstCastImageView" />
-
-        <TextView
-            android:id="@+id/secondCastTextView"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="@string/chris"
-            android:textColor="@color/colorActorName"
-            android:textSize="12sp"
-            android:lineSpacingExtra="2sp"
-            android:textFontWeight="900"
-            android:layout_marginTop="6dp"
-            android:paddingStart="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/thirdCastTextView"
-            app:layout_constraintStart_toEndOf="@+id/firstCastTextView"
-            app:layout_constraintTop_toBottomOf="@+id/secondCastImageView" />
-
-        <TextView
-            android:id="@+id/thirdCastTextView"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="@string/mark"
-            android:textColor="@color/colorActorName"
-            android:textSize="12sp"
-            android:lineSpacingExtra="2sp"
-            android:textFontWeight="900"
-            android:layout_marginTop="6dp"
-            android:paddingStart="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/fourthCastTextView"
-            app:layout_constraintStart_toEndOf="@+id/secondCastTextView"
-            app:layout_constraintTop_toBottomOf="@+id/thirdCastImageView" />
-
-        <TextView
-            android:id="@+id/fourthCastTextView"
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="@string/chris2"
-            android:textColor="@color/colorActorName"
-            android:textSize="12sp"
-            android:lineSpacingExtra="2sp"
-            android:textFontWeight="900"
-            android:layout_marginTop="6dp"
-            android:paddingStart="8dp"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toEndOf="@+id/thirdCastTextView"
-            app:layout_constraintTop_toBottomOf="@+id/secondCastImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/castTextView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
