@@ -5,14 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.academy_project.data.models.Film
+import com.example.academy_project.data.Movie
 
 class ListFilmAdapter(private val clickListener: OnRecyclerItemClicked): RecyclerView.Adapter<FilmViewHolder>() {
 
-    private var films = listOf<Film>()
+    private var films = listOf<Movie>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmViewHolder {
         return FilmViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.holder_list_element, parent, false))
@@ -25,13 +26,13 @@ class ListFilmAdapter(private val clickListener: OnRecyclerItemClicked): Recycle
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
         if (position != RecyclerView.NO_POSITION) {
             holder.itemView.setOnClickListener {
-                clickListener.onClick(position)
+                clickListener.onClick(films[position])
             }
             holder.onBind(films[position])
         }
     }
 
-    fun bindActors(newFilms: List<Film>) {
+    fun bindMovie(newFilms: List<Movie>) {
         films = newFilms
         notifyDataSetChanged()
     }
@@ -45,26 +46,41 @@ class FilmViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     private val movieName: TextView? = itemView.findViewById(R.id.filmNameSmallTextView)
     private val duration: TextView? = itemView.findViewById(R.id.timeTextView)
     private val ageRating: TextView? = itemView.findViewById(R.id.ageSmallTextView)
+    private val rating: RatingBar? = itemView.findViewById(R.id.smallRating)
 
-    fun onBind(film: Film){
+    fun onBind(film: Movie){
 
         Glide
             .with(itemView.context)
-            .load(film.imgForListAddress)
+            .load(film.poster)
             .into(icon)
 
-        genre?.text = film.genre
-        numOfRating?.text = film.numOfRating.toString()
-        movieName?.text = film.movieName
-        duration?.text = film.duration.toString()
-        ageRating?.text = film.ageRating
+        for (i in film.genres.indices){
+            val currentTextGenre: CharSequence? = genre?.text
+
+            if (i == 0) {
+                genre?.text = "${film.genres[i].name}, "
+            }
+            else if (i == film.genres.size - 1){
+                genre?.text = "$currentTextGenre ${film.genres[i].name}."
+            }
+
+            genre?.text = "$currentTextGenre ${film.genres[i].name}, "
+
+        }
+
+        numOfRating?.text = film.numberOfRatings.toString()
+        movieName?.text = film.title
+        duration?.text = film.runtime.toString()
+        ageRating?.text = film.minimumAge.toString() + "+"
+        rating?.rating = (film.ratings / 2.0).toFloat()
     }
 
 
 }
 
 interface OnRecyclerItemClicked {
-    fun onClick(position: Int)
+    fun onClick(film: Movie)
 }
 
 class FilmDecorator(

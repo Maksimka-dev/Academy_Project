@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/colorBackground">
@@ -30,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:foreground="@drawable/list_gradient"
-        tools:src="@drawable/maskmovie"
+        android:src="@drawable/maskmovie"
         app:layout_constraintBottom_toTopOf="@+id/filmNameSmallTextView"
         app:layout_constraintEnd_toEndOf="@+id/backgroundsmall"
         app:layout_constraintStart_toStartOf="@+id/backgroundsmall"
@@ -82,77 +81,30 @@
         app:layout_constraintTop_toTopOf="@+id/smallMovieImageView"
         app:layout_constraintVertical_bias="1.0" />
 
-
-    <ImageView
-        android:id="@+id/star1ImageView"
+    <RatingBar
+        android:id="@+id/smallRating"
         android:layout_width="0dp"
+        android:rating="2.2"
+        android:stepSize="0.1"
         android:layout_height="wrap_content"
-        android:src="@drawable/redstariconsmall"
-        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
-        app:layout_constraintStart_toStartOf="@+id/guidelineGap"
-        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
-
-    <ImageView
-        android:id="@+id/star2ImageView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:src="@drawable/redstariconsmall"
-        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/star1ImageView"
-        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
-
-    <ImageView
-        android:id="@+id/star3ImageView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="3dp"
-        android:src="@drawable/redstariconsmall"
-        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/star2ImageView2"
-        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
-
-    <ImageView
-        android:id="@+id/star4ImageView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="3dp"
-        android:src="@drawable/redstariconsmall"
-        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/star3ImageView2"
-        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
-
-    <ImageView
-        android:id="@+id/star5ImageView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="3dp"
-        android:src="@drawable/graystariconsmall"
-        app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/star4ImageView2"
-        app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
+        style="?android:ratingBarStyleSmall"
+        android:theme="@style/MyRatingBar"
+        app:layout_constraintTop_toBottomOf="@+id/filmCategoriesTextView"
+        app:layout_constraintStart_toStartOf="@+id/guidelineGap"/>
 
     <TextView
         android:id="@+id/countReviewsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:fontFamily="sans-serif"
         android:paddingStart="9dp"
         android:text="@string/count_reviews"
         android:textColor="@color/colorGrayText"
         android:textFontWeight="900"
         android:textSize="8sp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/star5ImageView2"
-        app:layout_constraintTop_toBottomOf="@+id/filmCategoriesTextView" />
+        app:layout_constraintBottom_toBottomOf="@+id/smallRating"
+        app:layout_constraintStart_toEndOf="@+id/smallRating"
+        app:layout_constraintTop_toTopOf="@+id/smallRating" />
 
     <TextView
         android:id="@+id/filmNameSmallTextView"
@@ -166,7 +118,7 @@
         android:textFontWeight="900"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/guidelineGap"
-        app:layout_constraintTop_toBottomOf="@+id/countReviewsTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/smallRating" />
 
     <TextView
         android:id="@+id/timeTextView"

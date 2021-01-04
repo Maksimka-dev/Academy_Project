@@ -89,62 +89,16 @@
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@+id/filmNameTextView" />
 
-
-        <ImageView
-            android:id="@+id/star1ImageView"
+        <RatingBar
+            android:id="@+id/rating"
             android:layout_width="0dp"
+            android:rating="2.2"
+            android:stepSize="0.1"
             android:layout_height="wrap_content"
-            android:src="@drawable/redstaricon"
-            app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView"
+            style="?android:ratingBarStyleIndicator"
+            android:theme="@style/MyRatingBar"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-            app:layout_constraintTop_toTopOf="@+id/countReviewsTextView" />
-
-        <ImageView
-            android:id="@+id/star2ImageView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:src="@drawable/redstaricon"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/star1ImageView"
-            app:layout_constraintTop_toTopOf="@+id/countReviewsTextView"
-            app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView" />
-
-        <ImageView
-            android:id="@+id/star3ImageView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="3dp"
-            android:src="@drawable/redstaricon"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/star2ImageView2"
-            app:layout_constraintTop_toTopOf="@+id/countReviewsTextView"
-            app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView" />
-
-        <ImageView
-            android:id="@+id/star4ImageView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="3dp"
-            android:src="@drawable/redstaricon"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/star3ImageView2"
-            app:layout_constraintTop_toTopOf="@+id/countReviewsTextView"
-            app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView" />
-
-        <ImageView
-            android:id="@+id/star5ImageView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="3dp"
-            android:src="@drawable/graystaricon"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/star4ImageView2"
-            app:layout_constraintTop_toTopOf="@+id/countReviewsTextView"
-            app:layout_constraintBottom_toBottomOf="@+id/countReviewsTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/filmCategoriesTextView"/>
 
         <TextView
             android:id="@+id/countReviewsTextView"
@@ -159,8 +113,9 @@
             android:textSize="14sp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toEndOf="@+id/star5ImageView2"
-            app:layout_constraintTop_toBottomOf="@+id/filmCategoriesTextView"/>
+            app:layout_constraintStart_toEndOf="@+id/rating"
+            app:layout_constraintTop_toTopOf="@+id/rating"
+            app:layout_constraintBottom_toBottomOf="@+id/rating"/>
 
         <TextView
             android:id="@+id/StorylineTextView"
@@ -175,7 +130,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/countReviewsTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/rating" />
 
         <TextView
             android:id="@+id/filmStoryTextView"

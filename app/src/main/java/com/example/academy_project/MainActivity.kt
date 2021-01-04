@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.mainWindow,ListFragment())
+            .addToBackStack(null)
             .commit()
     }
 }

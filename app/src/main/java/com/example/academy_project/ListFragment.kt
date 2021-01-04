@@ -7,7 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.academy_project.domain.FilmDataSource
+import com.example.academy_project.data.Movie
+import com.example.academy_project.data.loadMovies
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ListFragment: Fragment() {
 
@@ -37,16 +41,23 @@ class ListFragment: Fragment() {
     }
 
     private fun updateData() {
-        (recycler?.adapter as? ListFilmAdapter)?.apply {
-            bindActors(FilmDataSource().getFilms())
-        }
+
+            CoroutineScope(Dispatchers.Main).launch {
+
+                (recycler?.adapter as? ListFilmAdapter)?.apply {
+                    bindMovie(loadMovies(requireActivity()))
+                }
+
+            }
+
     }
 
     private val clickListener = object : OnRecyclerItemClicked {
-        override fun onClick(position: Int) {
+        override fun onClick(film: Movie) {
             (requireActivity() as MainActivity).supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.mainWindow, DeteilFragment(position))
+                .replace(R.id.mainWindow, DeteilFragment(film))
+                .addToBackStack(null)
                 .commit()
         }
     }
